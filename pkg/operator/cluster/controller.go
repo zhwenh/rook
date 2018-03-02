@@ -425,13 +425,13 @@ func newCluster(c *rookalpha.Cluster, context *clusterd.Context) *cluster {
 }
 
 func ClusterOwnerRef(namespace, clusterID string) metav1.OwnerReference {
-	blockOwner := true
+	//blockOwner := true
 	return metav1.OwnerReference{
 		APIVersion:         ClusterResource.Version,
 		Kind:               ClusterResource.Kind,
 		Name:               namespace,
 		UID:                types.UID(clusterID),
-		BlockOwnerDeletion: &blockOwner,
+		//BlockOwnerDeletion: &blockOwner,
 	}
 }
 
